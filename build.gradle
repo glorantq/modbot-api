@@ -10,7 +10,6 @@ repositories {
 }
 
 apply plugin: "java"
-apply plugin: "com.github.johnrengelman.shadow"
 apply plugin: "idea"
 
 sourceCompatibility = 1.8
@@ -27,5 +26,5 @@ dependencies {
     compile "com.github.Discord4J:Discord4J:$discord4j_version"
     compile "ch.qos.logback:logback-classic:$logbackVersion"
     compile "org.fusesource.jansi:jansi:$jansiVersion"
-    compileOnly "com.google.inject:guice:$guice_version"
+    compile "com.google.inject:guice:$guice_version"
 }
