@@ -1,0 +1,14 @@
+sourceCompatibility = 1.8
+version = "1.0-SNAPSHOT"
+
+repositories {
+
+}
+
+ext {
+    guice_version = "4.0"
+}
+
+dependencies {
+    compileOnly "com.google.inject:guice:$guice_version"
+}
