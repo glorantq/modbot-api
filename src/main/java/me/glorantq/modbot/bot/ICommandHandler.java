@@ -1,4 +1,4 @@
-package me.glorantq.modbot.me.glorantq.modbot;
+package me.glorantq.modbot.bot;
 
 import me.glorantq.modbot.commands.api.ICommand;
 import me.glorantq.modbot.module.JavaModule;

@@ -1,6 +1,6 @@
 package me.glorantq.modbot.module;
 
-import me.glorantq.modbot.me.glorantq.modbot.IBot;
+import me.glorantq.modbot.bot.IBot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
