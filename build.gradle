@@ -1,14 +1,31 @@
+group "me.glorantq.modbot"
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+
+    maven { url "https://oss.sonatype.org/content/groups/public/" }
+    maven { url 'https://jitpack.io' }
+    maven { url  "https://dl.bintray.com/dv8fromtheworld/maven" }
+}
+
+apply plugin: "java"
+apply plugin: "com.github.johnrengelman.shadow"
+apply plugin: "idea"
+
 sourceCompatibility = 1.8
 version = "1.0-SNAPSHOT"
 
-repositories {
-
-}
-
 ext {
+    discord4j_version = "dev-SNAPSHOT"
+    logbackVersion = "1.2.3"
+    jansiVersion = "1.16"
     guice_version = "4.0"
 }
 
 dependencies {
+    compile "com.github.Discord4J:Discord4J:$discord4j_version"
+    compile "ch.qos.logback:logback-classic:$logbackVersion"
+    compile "org.fusesource.jansi:jansi:$jansiVersion"
     compileOnly "com.google.inject:guice:$guice_version"
 }
