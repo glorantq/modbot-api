@@ -1,6 +1,7 @@
 package me.glorantq.modbot.bot;
 
 import me.glorantq.modbot.data.IGuildData;
+import me.glorantq.modbot.embed.IEmbedUtils;
 import me.glorantq.modbot.module.IModuleManager;
 import me.glorantq.modbot.permissions.IPermissionProvider;
 import sx.blah.discord.handle.obj.IGuild;
