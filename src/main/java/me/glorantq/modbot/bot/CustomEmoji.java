@@ -6,5 +6,6 @@ public class CustomEmoji {
                                LINK = "<:linksymbol_1f517:460561702824574986>",
                                STAR = "<:whitemediumstar_2b50:460580409177014275>",
                                BLACK_STAR = "<:blackstar:460584758423060481>",
-                               SPEECH_BALLOON = "<:speechballoon_1f4ac:460588907243765760>";
+                               SPEECH_BALLOON = "<:speechballoon_1f4ac:460588907243765760>",
+                               FLOPPY = "<:floppydisk_1f4be:460590680511610891>";
 }
