@@ -6,5 +6,6 @@ public class GoogleEmoji {
                          WHITE_QUESTION = "https://emojipedia-us.s3.amazonaws.com/thumbs/240/google/119/white-question-mark-ornament_2754.png",
                          SPEECH_BALOON = "https://emojipedia-us.s3.amazonaws.com/thumbs/240/google/119/speech-balloon_1f4ac.png",
                          CARD_INDEX = "https://emojipedia-us.s3.amazonaws.com/thumbs/240/google/119/card-index_1f4c7.png",
-                         CHECK_MARK = "https://emojipedia-us.s3.amazonaws.com/thumbs/240/google/119/heavy-check-mark_2714.png";
+                         CHECK_MARK = "https://emojipedia-us.s3.amazonaws.com/thumbs/240/google/119/heavy-check-mark_2714.png",
+                         LINK = "https://emojipedia-us.s3.amazonaws.com/thumbs/240/google/119/link-symbol_1f517.png";
 }
