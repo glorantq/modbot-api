@@ -45,4 +45,6 @@ public interface IBot {
      * @return The Bot's owner
      */
     IUser getApplicationOwner();
+
+    IEmbedUtils createEmbedUtils();
 }
