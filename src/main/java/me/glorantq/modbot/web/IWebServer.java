@@ -29,4 +29,11 @@ public interface IWebServer {
      * @return The Discord API instance
      */
     DiscordAPI getDiscordAPI();
+
+    /**
+     * Register a new WebSocket route
+     * @param path The path to listen on
+     * @param webSocketHandler The handler
+     */
+    void registerWebSocket(String path, Object webSocketHandler);
 }
