@@ -13,7 +13,7 @@ apply plugin: "java"
 apply plugin: "idea"
 
 sourceCompatibility = 1.8
-version = "1.0-SNAPSHOT"
+version = "1.1-SNAPSHOT"
 
 ext {
     discord4j_version = "dev-SNAPSHOT"
@@ -27,4 +27,59 @@ dependencies {
     compile "ch.qos.logback:logback-classic:$logbackVersion"
     compile "org.fusesource.jansi:jansi:$jansiVersion"
     compile "com.google.inject:guice:$guice_version"
+}
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allJava
+    classifier = 'sources'
+}
+
+task javadocJar(type: Jar) {
+    from javadoc
+    classifier = 'javadoc'
+}
+
+def mavenCredentials = new Properties()
+file("maven.properties").withInputStream { mavenCredentials.load(it) }
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'modbot-api'
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+            pom {
+                name = 'ModBot API'
+                description = 'API to create modules for ModBot'
+                url = 'https://glorantq.me/'
+                developers {
+                    developer {
+                        id = 'glorantq'
+                        name = 'Gerber Lóránt Viktor'
+                        email = 'glorantq@gmail.com'
+                    }
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            credentials {
+                username mavenCredentials.username
+                password mavenCredentials.password
+            }
+
+            def releasesRepoUrl = "https://repo.glorantq.me/repository/maven-releases/"
+            def snapshotsRepoUrl = "https://repo.glorantq.me/repository/maven-snapshots/"
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+        }
+    }
+}
+
+javadoc {
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html4', true)
+    }
 }

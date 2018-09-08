@@ -39,9 +39,8 @@ public class OAuthToken {
     private String scope;
 
     /**
-     * The token used for calls in {@link DiscordAPI}. May only be present when received in {@link me.glorantq.modbot.web.WebRoute#handle(Request, Response, OAuthUser, OAuthToken)}
+     * The token used for calls in {@link DiscordAPI}.
      * @see DiscordAPI
-     * @see me.glorantq.modbot.web.WebRoute#handle(Request, Response, OAuthUser, OAuthToken)
      */
     private String bearer;
 }

@@ -1,9 +1,11 @@
 package me.glorantq.modbot.web;
 
 import me.glorantq.modbot.web.oauth.DiscordAPI;
+import me.glorantq.modbot.web.oauth.OAuthUser;
 import spark.route.HttpMethod;
 
 import java.util.Map;
+import java.util.UUID;
 
 public interface IWebServer {
 
@@ -36,4 +38,18 @@ public interface IWebServer {
      * @param webSocketHandler The handler
      */
     void registerWebSocket(String path, Object webSocketHandler);
+
+    /**
+     * Returns the root URL to the server
+     * @return The URL
+     */
+    String getRootURL();
+
+    /**
+     * Retrieve a user from either the provided token or the cache UUID
+     * @param token The encrypted token
+     * @param id The cache UUID
+     * @return The credentials or null if failed
+     */
+    OAuthCredentials retrieveUser(String token, String id);
 }

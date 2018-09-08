@@ -11,9 +11,8 @@ public interface WebRoute {
      * Method called to handle a web request
      * @param request The original request
      * @param response The response
-     * @param discordUser The currently logged in user for this request
-     * @param discordToken The token of the currently logged in user
+     * @param credentials Information about the currently logged in user. Contains {@link OAuthToken} and {@link OAuthUser}
      * @return The response
      */
-    Object handle(Request request, Response response, OAuthUser discordUser, OAuthToken discordToken);
+    Object handle(Request request, Response response, OAuthCredentials credentials);
 }
